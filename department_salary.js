@@ -59,10 +59,10 @@ let company = {
  function calculateDepartmentSalary(departments){
     let totalSalary = 0; //starting with total salary at 0 to sum the values
 
-    for (let employees of departments.employees){
+    for (let employee of departments.employees){
         totalSalary += employee.salary; // using for of to go through each employee again and sum their salaries 
 
-        if (employee.subordinates && employee.subordinates.lengh > 0){ // chacking if the imployee has subordinates; if so, it calculates their total salary 
+        if (employee.subordinates && employee.subordinates.length > 0){ // chacking if the imployee has subordinates; if so, it calculates their total salary 
             totalSalary += calculateDepartmentSalary({employees: employee.subordinates});
         }
     };
